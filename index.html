@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css.css">
-    <link rel="script" href="js.js">
+    <script src="js.js"></script>
 </head>
-<body>
+<body onload="typeWriter()">
 <div class="content">
     <div class="browser-bar">
         <span class="close button"></span>
@@ -14,10 +14,8 @@
         <span class="max button"></span>
     </div>
     <div>
-        <p>
-            Hey Nice to meet you.
-        What is your name?
-        </p>
+        <p id ="myWords" ></p>
+        <p id ="myWords2"></p>
     </div>
     <form class="form-inline">
         <div class="form-group">
@@ -26,7 +24,14 @@
 <div>
     <input type="submit" style="position: absolute; left: -9999px"/>
 </div>
+       <div>
+           <form onsubmit="myScript"></form>
+       </div>
 
+        <!--<div>-->
+            <!--&lt;!&ndash;<element onsubmit="myScript">&ndash;&gt;-->
+        <!--</div>-->
+<!--write function print writer that takes user input and prints theirr name with a message and look up on submit -->
     </form>
 </div>
 </body>
