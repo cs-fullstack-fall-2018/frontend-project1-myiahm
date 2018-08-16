@@ -3,10 +3,18 @@ var txt = "Nice to meet you. What is your name?";  //variable that when called g
 var speed = 50; /* The speed/duration of the effect in milliseconds */
 
 printWriter();
+// main function that calls an event action on both functions
+function main()
+{
+    window.onload(typeWriter()); //loading the page with the typewriter function
+    document.getElementById("myWords").addEventListener("click", printWriter());// creating a event listener that says hey once you click enter call printwriter function
+
+}
 function typeWriter()
 {
 
-    if (i < txt.length) {
+    if (i < txt.length)
+    {
         document.getElementById("myWords").innerHTML += txt.charAt(i);
         i++;
         setTimeout(typeWriter, speed);     // if statement that gets the txt variable to display across the screen at a set speed
@@ -24,10 +32,11 @@ function typeWriter()
 function printWriter() ///NEW FUNCTION THAT DISPLAYS A NEW MESSAGE WITH THE USER INPUT IN IT ALONG WITH ANOTHER IF STATEMENT TO MAKE IT DISPLAY ON THE SAME PAGE
 {
     var input = document.getElementById("VisitorName").value;
+    // console.log("Input from printWriter: " + input);
 
 
     var p = 0;
-    var txt2 = " Hello"+ input + "thank you for visiting my page. If you would like to see more hit enter!. ";
+    var txt2 = " Hello1"+ input + "thank you for visiting my page. If you would like to see more hit enter!. ";
 
     var speed2 = 50; /* The speed/duration of the effect in milliseconds */
     if (p < txt2.length)
@@ -41,3 +50,6 @@ function printWriter() ///NEW FUNCTION THAT DISPLAYS A NEW MESSAGE WITH THE USER
 
     }
 }
+
+main();
+

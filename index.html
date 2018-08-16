@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css.css">
-    <script src="js.js"></script>
+    <script   src="https://code.jquery.com/jquery-3.3.1.js"
+              integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+              crossorigin="anonymous"></script>
 </head>
 <!--used onload so when the page loads it will ru the type writer function -->
-<body onload="typeWriter()">
+<body>
 <div class="content">
     <div class="browser-bar">
         <span class="close button"></span>
@@ -18,7 +20,7 @@
         <p id ="myWords" ></p>
         <p id="myWords2"></p>
     </div>
-    <form class="form-inline" onsubmit="printWriter()"><!-- tried to use a onsubmit that once the user enters name it calls printwriter function this is the part i cant get to work i wanr it all to display on the same page -->
+    <form class="form-inline"><!-- tried to use a onsubmit that once the user enters name it calls printwriter function this is the part i cant get to work i wanr it all to display on the same page -->
         <div class="form-group">
             <input type="text" class="form-control" id="VisitorName" placeholder="Type Name Press Enter"> <!-- my submit box -->
         </div>
