@@ -33,16 +33,17 @@
 .navbar {
     /*margin-bottom: 0;*/
     border-radius: 3em;
+    font-family: 'Indie Flower', cursive;
+
 }
 p
 {
-color: #588E60;
-font-size: larger;
+    color: #588E60;
+    font-size: larger;
+    font-family: 'Indie Flower', cursive;
+
 }
-.fa-laptop-code
-{
-    size: inherit;
-}
+
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {height: 450px}
@@ -58,6 +59,8 @@ footer {
     background-color: burlywood;
     color: white;
     padding: 15px;
+    font-family: 'Indie Flower', cursive;
+
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
@@ -77,5 +80,6 @@ h1
     background-color: tan;
      color: #508e5a !important;
     border-radius: 3em;
+    font-family: 'Indie Flower', cursive !important;
 
 }

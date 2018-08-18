@@ -2,14 +2,19 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Welcome</title>
     <link rel="stylesheet" href="css.css">
-    <script   src="https://code.jquery.com/jquery-3.3.1.js"
-              integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-              crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <script src="js.js"></script>
+
 </head>
-<!--used onload so when the page loads it will ru the type writer function -->
-<body>
+
+<!--used onload so when the page loads it will run the type writer function -->
+<body onload="justLanded();">
+
+<!-- Build a computer screen like graphic on main page -->
 <div class="content">
     <div class="browser-bar">
         <span class="close button"></span>
@@ -17,19 +22,12 @@
         <span class="max button"></span>
     </div>
     <div>
-        <p id ="myWords" ></p>
+        <p id="myWords"></p>
         <p id="myWords2"></p>
+        <input type="text" id="userEntryArea" onKeyPress="checkEnter(event)"/>
     </div>
-    <form class="form-inline"><!-- tried to use a onsubmit that once the user enters name it calls printwriter function this is the part i cant get to work i wanr it all to display on the same page -->
-        <div class="form-group">
-            <input type="text" class="form-control" id="VisitorName" placeholder="Type Name Press Enter"> <!-- my submit box -->
-        </div>
-<div>
-    <!--submit button that lets the user press enter to submit so it wont display a button i dont want a button-->
-    <input id="enter" type="submit" style="position: absolute; left: -9999px"/>
+
 </div>
-    </form>
-</div>
-<script src="js.js"></script>
+
 </body>
 </html>

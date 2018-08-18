@@ -1,57 +1,76 @@
 var i = 0;
-var txt = "Nice to meet you. What is your name?";  //variable that when called gives message
-var speed = 50; /* The speed/duration of the effect in milliseconds */
+var greetingsTxt = "";  //variable that when called gives message
+var speed = 50;
+var justLandedVar = true;
 
-//printWriter();
-// main function that calls an event action on both functions
-function main()
-{
-   // window.onload(typeWriter()); //loading the page with the typewriter function
-    typeWriter(); //loading the page with the typewriter function
-    document.getElementById("enter").addEventListener("click", printWriter());// creating a event listener that says hey once you click enter call printwriter function
-
+// This function will get called when the page loads
+function justLanded() {
+    justLandedVar = true;
+    typeWriter('Nice to meet you. What is your name?');
 }
-function typeWriter()
-{
 
-    if (i < txt.length)
+// Print the second message
+function readySecondMsg()
+{
+    justLandedVar = false;
+    let visitorName = document.getElementById("userEntryArea").value;
+    // window.alert(visitorName + ' pressed Enter');
+    document.getElementById("myWords").innerHTML = "";
+
+    // Clear welcome message and type next one
+    resetTypeWriter();
+    typeWriter("Hello "+ visitorName + "! Thank You for visiting my page!");
+}
+
+/* The speed/duration of the effect in milliseconds */
+/* Types out the provided string like a typewriter */
+function typeWriter(msgToPrint)
+{
+    greetingsTxt = greetingsTxt === "" ? msgToPrint : greetingsTxt;
+
+    if (i < greetingsTxt.length)
     {
-        document.getElementById("myWords").innerHTML += txt.charAt(i);
+        document.getElementById("myWords").innerHTML += greetingsTxt.charAt(i);
         i++;
         setTimeout(typeWriter, speed);     // if statement that gets the txt variable to display across the screen at a set speed
-        var input = document.getElementById("VisitorName").value;
-
-        // object.onsubmit = printWriter();
-
-
     }
-
-}
-
-
-
-function printWriter() ///NEW FUNCTION THAT DISPLAYS A NEW MESSAGE WITH THE USER INPUT IN IT ALONG WITH ANOTHER IF STATEMENT TO MAKE IT DISPLAY ON THE SAME PAGE
-{
-    var input = document.getElementById("VisitorName").value;
-    // console.log("Input from printWriter: " + input);
-
-
-    var p = 0;
-    var txt2 = " Hello1"+ input + "thank you for visiting my page. If you would like to see more hit enter!. ";
-
-    var speed2 = 50; /* The speed/duration of the effect in milliseconds */
-    if (p < txt2.length)
+    else
     {
-        document.getElementById("myWords2").innerHTML += txt2.charAt(p);
-        p++;
+        if (justLandedVar) { // If visitor just arrived
+            document.getElementById("userEntryArea").focus(); // Move cursor to text field to get visitor name
 
-        setTimeout(printWriter,speed2);
-
-
+        }else {
+            window.location.replace("index2.html"); // sending user to my second page after they eneter their name and second message displays
+        }
 
     }
+
 }
 
+// Reset the typewriter object (clear text etc)
+function resetTypeWriter() {
+    i = 0;
+    greetingsTxt = "";
+    document.getElementById("myWords").innerHTML = "";
+}
 
+// This function gets called and passed a keyDown event when key pressed, and checks if Enter pressed
+function checkEnter(e)
+{
+    let characterCode = e.key;
 
-main();
+    if (characterCode === 'Enter')
+    {
+        if (justLandedVar)
+        {
+            justLandedVar = false;
+            readySecondMsg();
+        }
+
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
