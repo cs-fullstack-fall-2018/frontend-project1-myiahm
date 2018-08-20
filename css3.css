@@ -27,3 +27,7 @@ h1
     transform: translateY(4px);
     border-radius: 2px;
 }
+.animated
+{
+    animation-delay: 5s;
+}
