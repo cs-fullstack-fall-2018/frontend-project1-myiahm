@@ -1,18 +1,26 @@
-@media (min-width: 640px)
-{
-    body
-    {
-        background-image: url(https://images.unsplash.com/photo-1432821596592-e2c18b78144f?dpr=2&fit=crop&fm=jpg&h=960&ixlib=rb-0.3.5&q=50&w=1440);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        min-height: 100vh;
-    }
-}
 h1
 {
-
-
+    color: white;
+    text-align: center;
+    font-family: Karumbi;
+    font-size: 8em;
+}
+h4
+{
+    text-align: center;
+    font-family: "Lohit Assamese";
+    font-size: 3em;
+}
+p
+{
+    color: white;
+    text-align: center;
+    font-family: "Lohit Kannada";
+    font-size: 2em;
+}
+body
+{
+    background-color: #518e8d;
 
 }
 .button {
